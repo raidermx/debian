@@ -1,6 +1,7 @@
 
 instalação do Debian
   ## Alterar repositórios
+  https://wiki.debian.org/pt_BR/SourcesList 
   nano /etc/apt/sources.list
   
   ## Substitua o USUARIO pelo nome do seu usuário:
