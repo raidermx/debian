@@ -25,6 +25,7 @@ instalação do Debian
   ## integração com o navegador
   https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
   https://extensions.gnome.org/extension/615/appindicator-support/
+  https://extensions.gnome.org/extension/1634/resource-monitor/
 
   ## otimizar bateria do notebook
   apt install tlp tlp-rdw
