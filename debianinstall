@@ -70,10 +70,30 @@ cd /tmp && wget -qO- https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F
 
 apt update && apt install spotify-client
 
+## Anydesk
+Para instalar o AnyDesk no Debian Bookworm, abra um terminal e execute o comando abaixo para adicionar o repositório oficial do mesmo:
 
+echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
+
+ Importe a chave de assinatura GPG do mesmo:
+
+cd /tmp && wget -qO- https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/anydesk.gpg && cd $HOME
+
+
+ E por último, instale a versão mais recente do AnyDesk com:
+
+apt update && apt install anydesk
+
+
+
+## Teamviewer
+Caso queira instalar o TeamViewer no Debian Bookworm basta executar o comando abaixo no terminal:
+
+cd /tmp && wget -c https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && apt install ./teamviewer*.deb && cd $HOME
   
 
-
++pacotes
+sudo apt install git neovim vim vim-gtk3 aptitude neofetch cmatrix aria2 tmux tmate ncal ccal gcal calc  links2 debsums deborphan htop hdparm vim timeshift akira gimp inkscape blender scribus krita krita-l10n kodi vlc flameshot darktable digikam mypaint kolourpaint rawtherapee librecad freecad leocad solvespace synfigstudio tupi openscad pencil2d octave scilab kruler ardour audacious kdenlive lmms mixxx musescore clementine ark  filezilla qbittorrent uget youtube-dl tlp tlp-rdw  cheese guvcview handbrake hydrogen mpv pitivi qtractor smplayer k3b brasero bluefish codeblocks emacs geany minder scratch carmetal geogebra kicad electric stellarium gnucash gnumeric calibre planner dia gedit cherrytree seahorse keepassxc 
   
   
   
