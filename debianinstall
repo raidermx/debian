@@ -1,0 +1,81 @@
+
+instalação do Debian
+  ## Alterar repositórios
+  nano /etc/apt/sources.list
+  
+  ## Substitua o USUARIO pelo nome do seu usuário:
+  adduser USUARIO sudo
+
+  ## Atualizar o sistema
+  apt update && apt upgrade
+
+  ## Configurar swap
+  
+  sudo apt install systemd-zram-generator
+  sudo vim /etc/sysctl.d/99-sysctl.conf
+  vm.swappiness=1
+  vm.vfs_cache_pressure=50
+  vm.dirty_background_bytes=16777216 
+  vm.dirty_bytes=50331648 
+
+  ## reconfigurar a linguagem do sistema
+  dpkg-reconfigure locales
+
+  ## integração com o navegador
+  https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+  https://extensions.gnome.org/extension/615/appindicator-support/
+
+  ## otimizar bateria do notebook
+  apt install tlp tlp-rdw
+  systemctl enable tlp && tlp start
+
+  ## ativar o firewall
+  apt install ufw gufw
+  ufw enable
+
+  ## flatpak
+  apt install flatpak
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+  ## nvidia
+  apt install linux-headers-amd64 build-essential dkms
+  apt install nvidia-detect
+  lspci -nn | egrep -i "3d|display|vga"
+
+  series 600 e mais novas
+  apt install nvidia-driver firmware-misc-nonfree
+
+  series 400 e mais antigas
+  apt install nvidia-legacy-390xx-driver firmware-misc-nonfree
+
+  tecnologia CUDA
+  apt install nvidia-cuda-dev nvidia-cuda-toolkit
+
+  ## codecs  
+
+  apt install faad ffmpeg gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly lame libavcodec-extra libavcodec-extra59 libavdevice59 libgstreamer1.0-0 sox twolame vorbis-tools
+
+  ## spotify
+  Se você é um dos milhares de usuários do Spotify e deseja instalar o aplicativo oficial do Spotify no seu Debian, execute o comando abaixo num terminal para adicionar o repositório oficial do mesmo:
+
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/spotify.gpg] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+
+ Importe a chave de assinatura GPG com o comando:
+
+cd /tmp && wget -qO- https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | gpg --dearmor | sudo dd of=/etc/apt/keyrings/spotify.gpg && cd $HOME
+
+
+ Atualize o cache dos repositórios e instale a versão mais recente do Spotify com:
+
+apt update && apt install spotify-client
+
+
+  
+
+
+  
+  
+  
+  
+  
