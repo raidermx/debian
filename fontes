@@ -1,0 +1,4 @@
+fontes proprietárias
+sudo apt purge ttf-mscorefonts-installer
+wget http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.6_all.deb -P ~/Downloads
+sudo apt install ~/Downloads/ttf-mscorefonts-installer_3.6_all.deb
