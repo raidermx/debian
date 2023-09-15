@@ -17,72 +17,76 @@ documentação:
 https://www.debian.org/doc/
 
 instalação do Debian
-  ## Alterar repositórios
-  https://wiki.debian.org/pt_BR/SourcesList 
-  nano /etc/apt/sources.list
+## Alterar repositórios
+https://wiki.debian.org/pt_BR/SourcesList 
+nano /etc/apt/sources.list
   
-  ## Substitua o USUARIO pelo nome do seu usuário:
-  adduser USUARIO sudo
+## Substitua o USUARIO pelo nome do seu usuário:
+su -
+adduser USUARIO sudo
 
-  ## Atualizar o sistema
-  apt update && apt upgrade
+## Atualizar o sistema
+sudo apt update && apt upgrade
 
-  ## Configurar swap
+## Configurar swap
   
-  sudo apt install systemd-zram-generator
-  sudo vim /etc/sysctl.d/99-sysctl.conf
-  vm.swappiness=1
-  vm.vfs_cache_pressure=50
-  vm.dirty_background_bytes=16777216 
-  vm.dirty_bytes=50331648 
+sudo apt install systemd-zram-generator
+sudo vim /etc/sysctl.d/99-sysctl.conf
+# swapconfig
+vm.swappiness=1
+vm.vfs_cache_pressure=50
+vm.dirty_background_bytes=16777216 
+vm.dirty_bytes=50331648 
 
-  ## reconfigurar a linguagem do sistema
-  dpkg-reconfigure locales
+## reconfigurar a linguagem do sistema
+sudo dpkg-reconfigure locales
 
-  ## integração com o navegador
-  https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
-  https://extensions.gnome.org/extension/615/appindicator-support/
+## integração com o navegador
+https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+https://extensions.gnome.org/extension/615/appindicator-support/
 
-  https://extensions.gnome.org/extension/3010/system-monitor-next/
-  sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor
-  reiniciar sessão
+monitor do sistema:
+sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor
+https://extensions.gnome.org/extension/3010/system-monitor-next/
+reiniciar sessão
 
   ou
 
-  https://extensions.gnome.org/extension/1634/resource-monitor/
+https://extensions.gnome.org/extension/1634/resource-monitor/
 
-  ## otimizar bateria do notebook
-  apt install tlp tlp-rdw
-  systemctl enable tlp && tlp start
+## otimizar bateria do notebook
+sudo apt install tlp tlp-rdw
+sudo systemctl enable tlp 
+sudo tlp start
 
-  ## ativar o firewall
-  apt install ufw gufw
-  ufw enable
+## ativar o firewall
+sudo apt install ufw gufw
+sudo ufw enable
 
-  ## flatpak
-  apt install flatpak
-  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+## flatpak
+sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-  ## nvidia
-  apt install linux-headers-amd64 build-essential dkms
-  apt install nvidia-detect
-  lspci -nn | egrep -i "3d|display|vga"
+## nvidia
+sudo apt install linux-headers-amd64 build-essential dkms
+sudo apt install nvidia-detect
+lspci -nn | egrep -i "3d|display|vga"
 
-  series 600 e mais novas
-  apt install nvidia-driver firmware-misc-nonfree
+series 600 e mais novas
+sudo apt install nvidia-driver firmware-misc-nonfree
 
-  series 400 e mais antigas
-  apt install nvidia-legacy-390xx-driver firmware-misc-nonfree
+series 400 e mais antigas
+sudo apt install nvidia-legacy-390xx-driver firmware-misc-nonfree
 
-  tecnologia CUDA
-  apt install nvidia-cuda-dev nvidia-cuda-toolkit
+tecnologia CUDA
+sudo apt install nvidia-cuda-dev nvidia-cuda-toolkit
 
-  ## codecs  
+## codecs  
 
-  apt install faad ffmpeg gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly lame libavcodec-extra libavcodec-extra59 libavdevice59 libgstreamer1.0-0 sox twolame vorbis-tools
+sudo apt install faad ffmpeg gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly lame libavcodec-extra libavcodec-extra59 libavdevice59 libgstreamer1.0-0 sox twolame vorbis-tools
 
-  ## spotify
-  Se você é um dos milhares de usuários do Spotify e deseja instalar o aplicativo oficial do Spotify no seu Debian, execute o comando abaixo num terminal para adicionar o repositório oficial do mesmo:
+## spotify
+Se você é um dos milhares de usuários do Spotify e deseja instalar o aplicativo oficial do Spotify no seu Debian, execute o comando abaixo num terminal para adicionar o repositório oficial do mesmo:
 
 echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/spotify.gpg] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
@@ -108,7 +112,7 @@ cd /tmp && wget -qO- https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo gpg --dea
 
  E por último, instale a versão mais recente do AnyDesk com:
 
-apt update && apt install anydesk
+sudo apt update && sudo apt install anydesk
 
 
 
@@ -120,6 +124,7 @@ cd /tmp && wget -c https://download.teamviewer.com/download/linux/teamviewer_amd
 
 ## pacotes
 sudo apt install git neovim vim vim-gtk3 aptitude neofetch cmatrix aria2 tmux tmate ncal ccal gcal calc  links2 debsums deborphan htop hdparm vim timeshift akira gimp inkscape blender scribus krita krita-l10n kodi vlc flameshot darktable digikam mypaint kolourpaint rawtherapee librecad freecad leocad solvespace synfigstudio tupi openscad pencil2d octave scilab kruler ardour audacious kdenlive lmms mixxx musescore clementine ark  filezilla qbittorrent uget youtube-dl tlp tlp-rdw  cheese guvcview handbrake hydrogen mpv pitivi qtractor smplayer k3b brasero bluefish codeblocks emacs geany minder scratch carmetal geogebra kicad electric stellarium gnucash gnumeric calibre planner dia gedit cherrytree seahorse keepassxc 
++pacotes:
 sudo apt install ethtool stacer bleachbit kdeconnect caja cpu-x cups vim vim-gtk3 aptitude neofetch cmatrix aria2 tmux tmate ncal ccal gcal calendar calc  links2 debsums deborphan htop hdparm vim timeshift gimp inkscape blender scribus krita kodi vlc flameshot darktable digikam mypaint kolourpaint rawtherapee librecad freecad leocad solvespace synfigstudio tupi openscad pencil2d octave scilab kruler ardour audacity audacious kdenlive lmms mixxx musescore clementine shotcut ark  filezilla qbittorrent uget youtube-dl tlp tlp-rdw okular cheese guvcview handbrake hydrogen mpv pitivi qtractor smplayer k3b brasero bluefish codeblocks emacs geany jedit minder scratch carmetal geogebra kicad electric stellarium tuxmath gnucash gnumeric calibre planner dia gedit cherrytree seahorse keepassxc focuswriter gnome-calculator thunderbird pidgin obs-studio apt-listbugs gpm rygel rygel-preferences psensor smartmontools vrms inxi hardinfo gparted grub-customizer tilix gnuplot ifenslave gnome-system-tools openvpn network-manager-openvpn-gnome gnome-disk-utility gnome-usage  baobab shotwell mangohud arch-install-scripts pdfarranger ristretto fonts-liberation firefox-esr evince xournal openshot-qt gajim revolt ratbagd piper games-chess kpat isomaster qgis abiword qpdf btrfs-progs xfsprogs exfatprogs hfsprogs lazarus mc cantor blinken kgeography kig klettres kmplot kalgebra kalzium kbruch kturtle parley tuxpaint step aisleriot sudoku galculator nemo openboard winff redshift xbacklight feh mplayer webcamoid transmission-gtk samba smbclient cifs-utils
 
 ## virtualização
@@ -128,8 +133,8 @@ sudo adduser $USER libvirt
 
 
 fontes proprietárias arial,times new roman e etc.
-ttf-mscorefonts-installer
-fonts-hack-ttf 
+sudo apt install ttf-mscorefonts-installer
+sudo apt install fonts-hack-ttf 
 
 ## temas
 
