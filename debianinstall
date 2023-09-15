@@ -146,7 +146,7 @@ apt install libreoffice-l10n-pt-br libreoffice-style-breeze libreoffice-style-co
 instalando o tema flat-remix:
 
 instale os pacotes:
-sudo dnf install glib2-devel ImageMagick
+sudo apt install glib2-devel ImageMagick
 
 vá para o diretorio do usuario e baixe os temas:
 
