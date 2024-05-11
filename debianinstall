@@ -28,6 +28,23 @@ adduser USUARIO sudo
 ## Atualizar o sistema
 sudo apt update && apt upgrade
 
+configurar atualizações automáticas:
+sudo apt install unattended-upgrades
+
+Então podemos abrir o arquivo de configuração, use o seu editor preferido para editar o arquivo:
+nano /etc/apt/apt.conf.d/50unattended-upgrades
+Este arquivo contém todas as configurações necessárias para definirmos a funcionalidade de atualização do pacote.
+
+Unattended-Upgrade::Automatic-Reboot "true";  # Para reiniciar o sistema após uma atualização de Kernel
+Unattended-Upgrade::Remove-Unused-Kernel-Packages "true"; # remover as versões de Kernel antigas
+Unattended-Upgrade::Remove-Unused-Dependencies "true"; # remover as dependencias de pacotes não usadas
+Unattended-Upgrade::Automatic-Reboot-Time "03:00"; # Que horas queremos que o sistema reinicie
+
+testar as configurações
+sudo unattended-upgrades --dry-run
+
+
+
 ## Configurar swap
   
 sudo apt install systemd-zram-generator
@@ -40,6 +57,13 @@ vm.dirty_bytes=50331648
 
 ## reconfigurar a linguagem do sistema
 sudo dpkg-reconfigure locales
+
+instalar os navegadores:
+apt install firefox-esr
+
+wget -ct0 https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+chmod +x google-chrome-stable_current_x86_64.rpm
+sudo apt install ./google-chrome-stable_current_x86_64.rpm
 
 ## integração com o navegador
 https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
