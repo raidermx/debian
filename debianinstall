@@ -61,9 +61,9 @@ sudo dpkg-reconfigure locales
 instalar os navegadores:
 apt install firefox-esr
 
-wget -ct0 https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-chmod +x google-chrome-stable_current_x86_64.rpm
-sudo apt install ./google-chrome-stable_current_x86_64.rpm
+wget -ct0 https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.deb
+chmod +x google-chrome-stable_current_x86_64.deb
+sudo apt install ./google-chrome-stable_current_x86_64.deb
 
 ## integração com o navegador
 https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
