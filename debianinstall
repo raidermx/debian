@@ -150,6 +150,20 @@ sudo ufw alow 22
 sudo systemctl enable ssh
 sudo systemctl start ssh
 sudo systemctl status ssh
+Para acessar a máquina de outro Linux, utilizamos o comando: ssh usuario@ip (onde usuario é o usuario do sistema e ip é o endereço do equipamento, Lan ou Wan, dependendo da sua localização)
+ssh usuario_do_servidor@ip_do_servidor -p 22890
+E copie os dados do local para o servidor via comando scp:
+scp -P 22890 /CAMINHO/PARA/ARQUIVO usuario_do_servidor@ip_do_servidor:/CAMINHO/PARA/DESTINO
+Ou pegue dados do servidor para o diretório atual da máquina local por meio do comando:
+scp -P 22890 usuario_do_servidor@ip_do_servidor:/PATH/TO/FILE ./
+Para redirecionar ssh e ouvir em outras interfaces além de localhost
+habilite:
+no sshd_config
+    gatewayPorts yes
+ssh -R 2222:0.0.0.0:22 amigo@201.83.71.18
+
+# tmate
+sudo apt install tmate
 
 ## Anydesk
 Para instalar o AnyDesk no Debian Bookworm, abra um terminal e execute o comando abaixo para adicionar o repositório oficial do mesmo:
