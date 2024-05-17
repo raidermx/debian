@@ -71,7 +71,7 @@ sudo apt install cockpit
 sudo systemctl enable cockpit.socket
 sudo systemctl start cockpit.socket
 sudo systemctl status cockpit.socket
-
+sudo ufw allow 9090
 https://localhost:9090
 
 ## instalar os navegadores:
