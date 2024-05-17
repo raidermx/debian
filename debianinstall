@@ -32,7 +32,7 @@ configurar atualizações automáticas:
 sudo apt install unattended-upgrades
 
 Então podemos abrir o arquivo de configuração, use o seu editor preferido para editar o arquivo:
-nano /etc/apt/apt.conf.d/50unattended-upgrades
+sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 Este arquivo contém todas as configurações necessárias para definirmos a funcionalidade de atualização do pacote.
 
 Unattended-Upgrade::Automatic-Reboot "true";  # Para reiniciar o sistema após uma atualização de Kernel
@@ -43,7 +43,15 @@ Unattended-Upgrade::Automatic-Reboot-Time "03:00"; # Que horas queremos que o si
 testar as configurações
 sudo unattended-upgrades --dry-run
 
+ativar ou desativar as atualizações automáticas.
+e quiser desativar as atualizações, basta trocar aonde aparece o número "1" pelo número "0", e salvar o arquivo.
+Vamos editar o arquivo abaixo:
 
+sudo vim /etc/apt/apt.conf.d/10periodic
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::AutocleanInterval "7";
+APT::Periodic::Unattended-Upgrade "1";
 
 ## Configurar swap
   
@@ -58,7 +66,15 @@ vm.dirty_bytes=50331648
 ## reconfigurar a linguagem do sistema
 sudo dpkg-reconfigure locales
 
-instalar os navegadores:
+## instalar o cockpit
+sudo apt install cockpit
+sudo systemctl enable cockpit.socket
+sudo systemctl start cockpit.socket
+sudo systemctl status cockpit.socket
+
+https://localhost:9090
+
+## instalar os navegadores:
 apt install firefox-esr
 
 wget -ct0 https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.deb
