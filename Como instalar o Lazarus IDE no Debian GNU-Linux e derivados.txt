@@ -1,0 +1,94 @@
+Como instalar o Lazarus IDE no Linux Ubuntu, Debian, Mint e derivados
+
+Se você quer começar a fazer aplicativos pra o Linux, conheça e veja como instalar o Lazarus IDE no Linux Ubuntu, Debian, Mint e derivados
+
+
+Se você está pensando em começar a desenvolver um aplicativo para Linux e com uma interface gráfica de usuário (GUI) no Linux, então você deve conhecer o Lazarus IDE, um ambiente de desenvolvimento integrado que o ajudará muito no seu trabalho, permitindo que você crie rapidamente e criar GUIs para aplicativos com uma aparência atraente. Além disso, esse IDE possui um grande número de componentes incluídos.
+
+
+Lazarus IDE tem bom suporte para as distribuições mais populares, como openSUSE, Ubuntu, Debian e Fedora. Por outro lado, é bastante simples de usar, já que seu designer gráfico é muito fácil e intuitivo.
+
+A isso devemos acrescentar que é open source, tem uma comunidade muito ativa e amigável, e que é muito bem mantido.
+
+Mas os pontos fortes do Lazarus IDE não param por aí. Existem mais vantagens neste IDE. Entre os recursos estão:
+
+Você pode usar diferentes tipos de widgets para a interface do usuário.
+Com apenas alguns cliques você pode construir a GUI baseada em GTK2 ou Qt5.
+É multiplataforma, então você pode desenvolver no e para o Linux. Você também pode fazer isso no Windows ou macOS.
+
+
+Se você deseja conhecer alguns aplicativos GUI populares que foram desenvolvidos pelo Lazarus IDE para lhe dar uma ideia do que este ambiente de desenvolvimento pode fazer, existem alguns.
+
+Por exemplo, você pode ver Double Commander e PeaZip. Talvez este segundo seja um dos mais conhecidos e usados ​​nas distros Linux para compactar e descompactar arquivos de um aplicativo com uma GUI no estilo mais puro de Izarc, WinRAR ou WinZIP para Windows.
+
+E para começar a usar o Lazarus IDE, você deve seguir os passo do procedimento abaixo:
+
+Como instalar o Lazarus IDE no Linux Ubuntu, Debian, Mint e derivados
+Quem quiser instalar o Lazarus IDE no Linux Ubuntu, Debian e outros sistemas que suportam arquivos .deb, deve fazer o seguinte:
+
+Passo 1. Abra um terminal;
+Passo 2. Confira se o seu sistema é de 32 bits ou 64 bits, para isso, use o seguinte comando no terminal:
+
+uname -m
+Passo 3. Instalação via Pacotes DEB Oficiais:
+Baixe os pacotes DEB oficiais do Lazarus:
+Lazarus 64-bit DEB
+Lazarus 32-bit DEB
+Abra o gerenciador de arquivos, vá para a pasta “Downloads”, clique com o botão direito e escolha “Abrir no Terminal”.
+Se seu sistema é de 64 bits, use o comando abaixo para baixar o programa. Se o link estiver desatualizado, acesse essa página https://sourceforge.net/projects/lazarus/files/, baixe a última versão e salve-o com o nome programa.deb:
+
+
+lazarus-project:
+
+wget -ct0 https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%203.2/lazarus-project_3.2.0-0_amd64.deb
+
+fpc-laz:
+
+wget https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%203.2/fpc-laz_3.2.2-210709_amd64.deb
+
+fpc-src:
+wget https://sourceforge.net/projects/lazarus/files/Lazarus%20Linux%20amd64%20DEB/Lazarus%203.2/fpc-src_3.2.2-210709_amd64.deb
+
+Passo 4. Agora instale o programa com os comandos abaixo:
+
+sudo apt install ./fpc*.deb ./lazarus-project*.deb
+
+ou
+
+sudo dpkg -i *.deb
+sudo apt-get install -f
+
+
+se precisar desinstalar o programa, use esse comando:
+
+sudo apt-get remove fpc-src*
+sudo apt-get remove fpc-laz*
+sudo apt-get remove lazarus-project*
+
+Pronto! Agora, você pode iniciar o programa no menu Aplicativos/Dash/Atividades ou qualquer outro lançador de aplicativos da sua distro, ou digite lazarus-ide ou em um terminal, seguido da tecla TAB.
+
+Após iniciar o aplicativo, libere sua criatividade e conhecimento pra começar a produzir programas para Linux, Windows e macOS.
+
+lazarus-project_3.2.0-0_amd64.deb	2024-02-26	138.3 MB	512
+fpc-laz_3.2.2-210709_amd64.deb	2024-02-26	39.3 MB	315
+README.txt	2024-02-26	876 Bytes	76
+fpc-src_3.2.2-210709_amd64.deb	2024-02-26	30.6 MB	293
+Totals: 4 Items	 	208.2 MB	1,196
+You need to download and install all three packages fpc, fpc-src and lazarus.
+
+fpc-laz - the Compiler, some command line tools, base units and non visual components like database access
+fpc-src - the sources of fpc and its packages, needed for code browsing
+lazarus-project - the IDE, visual components and help files
+
+* For an overview what changed from previous 2.2 versions 
+(includes incompatibilities with earlier versions) see:
+- https://wiki.freepascal.org/Lazarus_3.0_release_notes
+- https://wiki.lazarus.freepascal.org/User_Changes_3.2.2
+- https://wiki.freepascal.org/FPC_New_Features_3.2
+
+* Checksums can be found at https://www.lazarus-ide.org/index.php?page=checksums
+
+* For additional information visit our homepage, forum, wiki, and FAQ:
+-- https://www.lazarus-ide.org/
+-- https://forum.lazarus.freepascal.org/
+-- https://wiki.lazarus.freepascal.org/Lazarus_Faq
