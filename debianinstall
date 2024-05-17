@@ -68,6 +68,7 @@ sudo dpkg-reconfigure locales
 
 ## instalar o cockpit
 sudo apt install cockpit
+sudo apt install cockpit-bridge cockpit-system cockpit-podman cockpit-machines cockpit-networkmanager cockpit-packagekit cockpit-storaged
 sudo systemctl enable cockpit.socket
 sudo systemctl start cockpit.socket
 sudo systemctl status cockpit.socket
