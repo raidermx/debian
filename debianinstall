@@ -140,6 +140,17 @@ cd /tmp && wget -qO- https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F
 
 apt update && apt install spotify-client
 
+
+### Conexão remota:
+
+## ssh
+sudo apt install ssh
+sudo apt install openssh-server
+sudo ufw alow 22
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo systemctl status ssh
+
 ## Anydesk
 Para instalar o AnyDesk no Debian Bookworm, abra um terminal e execute o comando abaixo para adicionar o repositório oficial do mesmo:
 
