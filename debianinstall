@@ -100,7 +100,7 @@ sudo apt install ./google-chrome-stable_current_x86_64.deb
 sudo apt install gimp inkscape blender krita rawtherapee digikam kdenlive shotcut openshot-qt vlc smplayer mpv audacity audacious librecad obs-studio handbrake 
 
 ## kit científico
-sudo apt install scilab gnuplot geogebra 
+sudo apt install scilab gnuplot geogebra kicad freecad 
 
 QGIS:
 https://www.qgis.org/pt_BR/site/forusers/alldownloads.html#
