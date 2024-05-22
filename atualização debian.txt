@@ -15,4 +15,20 @@ Unattended-Upgrade::Automatic-Reboot-Time "03:00"; # Que horas queremos que o si
 testar as configurações
 sudo unattended-upgrades --dry-run
 
+Agora, vamos ver como ativar ou desativar as atualizações automáticas.
+
+Vamos editar o arquivo abaixo:
+
+# vim /etc/apt/apt.conf.d/10periodic
+
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::AutocleanInterval "7";
+APT::Periodic::Unattended-Upgrade "1";
+
+Se quiser desativar as atualizações, basta trocar aonde aparece o número "1" pelo número "0", e salvar o arquivo.
+
+
+Espero que isso ajude aos colegas que precisam atualizar dezenas ou centenas de computadores. 
+
 Com a instalação destes pacotes podemos ficar mais tranquilos em relação a atualizações de sistemas operacionais e também podemos manter as nossas máquinas sempre atualizadas de forma mais concisa.
