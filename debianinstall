@@ -92,9 +92,9 @@ https://localhost:9090
 ## instalar os navegadores:
 apt install firefox-esr
 
-wget -ct0 https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.deb
-chmod +x google-chrome-stable_current_x86_64.deb
-sudo apt install ./google-chrome-stable_current_x86_64.deb
+wget -ct0 https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+chmod +x google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
 
 ## kit gráfico e multimedia
 sudo apt install gimp inkscape blender krita rawtherapee digikam kdenlive shotcut openshot-qt vlc smplayer mpv audacity audacious librecad obs-studio handbrake 
