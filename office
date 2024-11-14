@@ -8,6 +8,12 @@ wps office
 https://www.wps.com/pt-BR/office/linux/
 https://github.com/HenriqueAD7/wps-osistematico-language-pt-br/releases/
 
+wget -qO - "https://winunix.github.io/debian/public.key" | sudo apt-key add -
+echo "deb https://winunix.github.io/debian focal main" | sudo tee /etc/apt/sources.list.d/winunix-focal.list
+sudo apt update
+sudo apt install fonts-3rd-party
+sudo apt install wps-office-full
+
 onlyoffice
 https://www.onlyoffice.com/pt/download-desktop.aspx
 
