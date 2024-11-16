@@ -16,6 +16,12 @@ https://www.debian.org/doc/manuals/debian-reference/debian-reference.pt.pdf
 documentação:
 https://www.debian.org/doc/
 
+particionamento:
+2MB para bios boot
+500MB para UEFI
+8GB para swap
++restante do disco para a / raiz
+
 instalação do Debian
 ## Alterar repositórios
 https://wiki.debian.org/pt_BR/SourcesList 
@@ -231,9 +237,12 @@ sudo apt install fonts-hack-ttf
 
 ## temas
 
+instalando o tema yaru:
+sudo apt install yaru-theme*
+
 sudo apt install materia-gtk-theme deepin-icon-theme paper-icon-theme 
 
-temas Libreoffice
+temas Libreoffice:
 apt install libreoffice-l10n-pt-br libreoffice-style-breeze libreoffice-style-colibre libreoffice-style-elementary libreoffice-style-hicontrast libreoffice-style-sifr 
 
 instalando o tema flat-remix:
