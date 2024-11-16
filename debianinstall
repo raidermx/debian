@@ -270,5 +270,39 @@ gsettings set org.gnome.shell.extensions.user-theme name "Flat-Remix-Blue-Light"
 reboot
 
 altere os temas com gnome-tweaks (ajustes)
+
+### VIRTUALIZAÇÃO
+
+# docker
+https://www.docker.com/
+
+# virt-manager
+https://virt-manager.org/
+
+# virtual box
+https://www.virtualbox.org/
+
+# vmware
+https://www.vmware.com/
+
+# vagrant
+https://www.vagrantup.com/
+
+### Linguagens de programação:
+
+# java
+https://www.oracle.com/javase/ 
+
+# python
+https://www.python.org/
+
+# ruby
+https://www.ruby-lang.org/pt/
+
+# nodejs
+https://nodejs.org/pt
+
+# asdf - gerenciador de versões multiliguagens
+https://asdf-vm.com/
   
   
