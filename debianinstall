@@ -1,4 +1,4 @@
-https://www.debian.org/ - Debian - o sistema operacional Universal
+### https://www.debian.org/ - Debian - o sistema operacional Universal
 
 download debian:
 https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
@@ -96,8 +96,10 @@ sudo ufw allow 9090
 https://localhost:9090
 
 ## instalar os navegadores:
-apt install firefox-esr
+firefox
+sudo apt install firefox-esr
 
+google chrome para sistemas dependentes da API do google
 wget -ct0 https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 chmod +x google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
@@ -243,7 +245,7 @@ sudo apt install yaru-theme*
 sudo apt install materia-gtk-theme deepin-icon-theme paper-icon-theme 
 
 temas Libreoffice:
-apt install libreoffice-l10n-pt-br libreoffice-style-breeze libreoffice-style-colibre libreoffice-style-elementary libreoffice-style-hicontrast libreoffice-style-sifr 
+sudo apt install libreoffice-l10n-pt-br libreoffice-style-breeze libreoffice-style-colibre libreoffice-style-elementary libreoffice-style-hicontrast libreoffice-style-sifr 
 
 instalando o tema flat-remix:
 
