@@ -105,7 +105,7 @@ chmod +x google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
 ## kit de compactação e descompactação de arquivos
-sudo apt install arc arj cabextract lhasa p7zip p7zip-full p7zip-rar rar unrar unar unace unzip xz-utils zip
+sudo apt install arc arj cabextract lhasa 7zip p7zip p7zip-full p7zip-rar rar unrar unar unace unzip xz-utils zip
 
 ## kit gráfico e multimedia
 sudo apt install gimp inkscape blender krita rawtherapee digikam kdenlive shotcut openshot-qt vlc smplayer mpv audacity audacious librecad obs-studio handbrake 
