@@ -1,0 +1,4 @@
+$ git clone https://github.com/Antynea/grub-btrfs
+$ cd grub-btrfs
+# cp 41_snapshots-btrfs /etc/grub.d/
+# grub-mkconfig -o /boot/grub/grub.cfg
