@@ -256,7 +256,8 @@ sudo apt install fonts-hack-ttf
 instalando o tema yaru:
 sudo apt install yaru-theme*
 
-sudo apt install materia-gtk-theme deepin-icon-theme paper-icon-theme 
+instalando os ícones deepin e paper:
+sudo apt install deepin-icon-theme paper-icon-theme 
 
 temas Libreoffice:
 sudo apt install libreoffice-l10n-pt-br libreoffice-style-breeze libreoffice-style-colibre libreoffice-style-elementary libreoffice-style-hicontrast libreoffice-style-sifr 
