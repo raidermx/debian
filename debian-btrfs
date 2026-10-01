@@ -6,7 +6,7 @@ iniciar o boot e selecionar advanced options / expert install
 configurações iniciais
 particionar
 criar partições
-/efi     sda1   512MB
+/efi     sda1   +600M
 /        sda2   Restante do disco
 
 
